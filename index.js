@@ -27,8 +27,14 @@ const handleHome = (req, res) => res.send("Hello from Home");
 // }
 
 const handleProfile = (req, res) => res.send("You are on my Profile");
+const betweenHome = (req, res, next) => {
+    console.log("You are on my between");
+    next();
+}
 
+app.use(betweenHome);
 app.get("/", handleHome);
+// app.get("/",betweenHome, handleHome);
 app.get("/profile", handleProfile);
 // respond with "hello world" when a GET request is made to the homepage
 // app.get('/', (req, res) => {

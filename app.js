@@ -9,16 +9,17 @@ import videoRouter from "./routers/videoRouters";
 import routes from "./routes";
 const app = express();
 
+//view engine
+app.set("view engine", "pug");
 
+//middlewares
+app.use(cookieParser()); //is the one takes the cookies and makes them available to us
+app.use(bodyParser.json()); //is the one to check what content is user sending to the  website
+app.use(bodyParser.urlencoded({extended: true})); //
+app.use(helmet());// allows to have more security
+app.use(morgan("dev")); //
 
-
-app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(helmet());
-app.use(morgan("dev"));
-
-app.use(routes.home, globalRouter);
+app.use(routes.home, globalRouter);  
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
 

@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouters";
-import routes from "./routers";
+import routes from "./routes";
 const app = express();
 
 

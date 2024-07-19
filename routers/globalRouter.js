@@ -1,9 +1,11 @@
 import express from "express";
-import routes from "../routers";
+import routes from "../routes";
 import { home,search } from "../controllers/videoController";
 import { join,login,logout } from "../controllers/userController";
 const globalRouter = express.Router();
 
+
+//moved to controller
 // globalRouter.get(routes.home, (req, res) => res.send('Home'));
 // globalRouter.get(routes.search, (req, res) => res.send('search'));
 // globalRouter.get(routes.join, (req, res) => res.send('Join'));

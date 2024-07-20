@@ -6,13 +6,12 @@ export const home = (req, res) => {
 
 export const search = (req, res) => {
 
-    //console.log(req.query.term);
-    //const searchingBy =req.query.term;
     const { query : {term : searchingBy}
  }= req;
-//  console.log(term);
-    res.render("search",{pageTitle: 'Search', searchingBy: searchingBy});
+    res.render("search",{pageTitle: 'Search', searchingBy, videos});
 };
+
+
 export const upload = (req, res) => res.render("upload",  {pageTitle: 'Upload'}); 
 
 

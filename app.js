@@ -13,6 +13,7 @@ const app = express();
 
 //view engine
 app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads"))
 
 //middlewares
 app.use(helmet());// allows to have more security

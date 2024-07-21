@@ -1,21 +1,11 @@
-// import mongoose from "mongoose";
-
-// mongoose.connect("mongodb://localhost:27017/we-tube");
-
-// const db =mongoose.connection;
-
-// const handleOpen = () => console.log("MongoDB connected successfully");
-
-
-// db.once("open", handleOpen);
 
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-// Replace this with your MongoDB connection string
-const uri = "mongodb://localhost:27017/we-tube";
+dotenv.config();
 
-// Connect to MongoDB
-mongoose.connect(uri, {
+
+mongoose.connect(process.env.Mongo_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
